@@ -11,8 +11,8 @@ const Grid = ({ config, data }) => (
       {data.map(d =>
         <tr>
           {config.map(c =>
-            <td key={c.field}>
-              {typeof  d[c.field] === 'string' ?  d[c.field] : <c.component data= {d[c.field]}/> }
+            <td key={d[c.field]}>
+              {!c.component ?  d[c.field] : <c.component data={d[c.field]}/> }
             </td>
           )}
         </tr>)}
